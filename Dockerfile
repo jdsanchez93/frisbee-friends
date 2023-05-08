@@ -10,6 +10,7 @@ FROM eclipse-temurin:17-jdk-alpine AS build
 WORKDIR /workspace/app
 
 COPY ./frisbee-friends-service /workspace/app
+COPY --from=clientbuild /app/build /workspace/app/src/main/resources/static
 RUN --mount=type=cache,target=/root/.gradle ./gradlew clean build
 RUN mkdir -p build/dependency && (cd build/dependency; jar -xf ../libs/*-SNAPSHOT.jar)
 
