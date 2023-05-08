@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FrisbeeFriendsServiceApplication<frisbee-friends-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.jd_sanchez.frisbeefriendsservice.FrisbeeFriendsServiceApplication",
+            "projectName": "frisbee-friends-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
