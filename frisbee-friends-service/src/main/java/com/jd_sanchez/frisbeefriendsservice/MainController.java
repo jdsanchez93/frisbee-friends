@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.jd_sanchez.frisbeefriendsservice.entities.User;
 
 @Controller
-@RequestMapping(path = "/demo")
+@RequestMapping(path = "/api/demo")
 public class MainController {
     @Autowired
     private UserRepository userRepository;

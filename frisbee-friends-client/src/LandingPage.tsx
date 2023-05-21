@@ -10,6 +10,33 @@ const LandingPage: React.FC = () => {
     dispatch(userLoggedIn());
   };
 
+  const callApi = () => {
+    fetch('/api/demo/all')
+      .then(x => x.json())
+      .then(x => console.log(x))
+      .catch(e => console.error('api error', e))
+  }
+
+  const logout = () => {
+    fetch('/logout', {
+      method: 'POST'
+    })
+      .then(x => x.json())
+      .then(x => console.log(x))
+      .catch(e => console.error('api error', e))
+  }
+
+  const loginGithub = () => {
+    fetch('/oauth2/authorization/github', {
+      method: 'GET',
+      // TODO figure out cors
+      mode: 'no-cors',
+      
+    })
+      .then(x => console.log(x))
+      .catch(e => console.error('api error', e))
+  };
+
   return (
     <div>
       <header>
@@ -20,6 +47,10 @@ const LandingPage: React.FC = () => {
         <h2>Welcome to My Ultimate Frisbee App!</h2>
         <p>Find your perfect Ultimate Frisbee match!</p>
         <button onClick={handleLogin}>Log In</button>
+        <button onClick={callApi}>call api</button>
+        <button onClick={logout}>logout</button>
+
+        <button onClick={loginGithub}>LOGIN</button>
         {/* Add other components and content as needed */}
       </section>
       <footer>
